@@ -3568,3 +3568,17 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child { gap: .5rem; }
       height: 36px !important;
   }
 }
+/* --- Correctif pour forcer l'affichage du texte du plugin Custom Logo --- */
+.skinHeader-left span, 
+.skinHeader-left div,
+.skinHeader-left a + span {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+}
+
+.skinHeader-left {
+    display: flex !important;
+    align-items: center !important;
+}
