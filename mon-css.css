@@ -2917,8 +2917,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child { gap: .5rem; }
   min-height: 100vh;
   padding: 1em;
   overflow-y: auto;
-  background: linear-gradient(to bottom, rgba(0,0,0,.95), rgba(13,13,13,.95)),
-              var(--loginPageBgUrl);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(13, 13, 13, 0)), var(--loginPageBgUrl);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3502,17 +3501,102 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child { gap: .5rem; }
   color: #ff3333 !important;
   text-shadow: 0 0 8px rgba(255,0,0,.3) !important;
 }
-/* --- Correctif pour forcer l'affichage du texte du plugin Custom Logo --- */
-.skinHeader-left span, 
-.skinHeader-left div,
-.skinHeader-left a + span {
+
+/* Also for list items and other text */
+.listItem:hover .listItemBodyText,
+.listItem:hover .listItemBodyText.secondary,
+.navMenuOption:hover,
+.navMenuOption:hover *,
+.sectionTitleTextButton:hover h2,
+.emby-tab-button:hover,
+.headerButton:hover,
+.paper-icon-button-light:hover,
+.button-link:hover {
+  color: #ff3333 !important;
+  transition: color .18s ease !important;
+}
+
+/* 3. RED PLAY BUTTON */
+.cardOverlayContainer > .cardOverlayFab-primary,
+.listItemImageButton,
+.layout-mobile .cardOverlayButton-br:not([data-action="menu"]) > .cardOverlayButtonIcon {
+  background-color: rgb(180,0,0) !important;
+  color: white !important;
+  border-color: rgba(255,70,70,.55) !important;
+}
+.cardOverlayContainer > .cardOverlayFab-primary:hover,
+.listItemImageButton:hover {
+  background-color: rgb(220,0,0) !important;
+}
+
+/* ================= MOBILE TOUCH FIX ================= */
+
+  /* Top left menu button */
+  .headerButton,
+  .headerButton.headerButtonLeft,
+  .headerButton.headerButtonRight {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      margin: 0 6px !important;
+  }
+
+  /* Icons inside header buttons */
+  .headerButton i,
+  .headerButton .material-icons,
+  .headerButton .material-icons-round {
+      font-size: 26px !important;
+  }
+
+  /* Profile picture tap area */
+  .headerUserButton {
+      width: 36px !important;
+      height: 36px !important;
+  }
+
+  .headerUserButton img {
+      width: 36px !important;
+      height: 36px !important;
+  }
+
+  /* Cast & group watch buttons */
+  .headerCastButton,
+  .headerSyncButton {
+      width: 36px !important;
+      height: 36px !important;
+  }
+}
+/* --- Personnalisation pour la transparence --- */
+
+#loginPage {
+    background: transparent !important;
+}
+
+.backgroundContainer.withBackdrop {
+    background: transparent !important;
+}
+
+.loginForm {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+}
+/* --- Correctif direct par CSS --- */
+.skinHeader-left {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.skinHeader-left::before {
+    content: "LAGLUENASS" !important;
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
     color: #ffffff !important;
-}
-
-.skinHeader-left {
-    display: flex !important;
-    align-items: center !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    margin-right: 15px !important;
+    text-transform: uppercase !important;
 }
